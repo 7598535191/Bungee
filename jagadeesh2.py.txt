@@ -1,0 +1,135 @@
+#Create a variable for the file name
+filename = 'filteredCountry.csv' #This is simply a string of text
+
+#Open the file
+infile = open(filename, 'r') # 'r' says we are opening the file to read, infile is the opened file object that we will read from
+
+#Store the data from the file in a variable
+data = infile.read()
+
+#Print the data in the file
+print(data)
+
+#close the file
+infile.close()
+
+
+
+#Create a variable for the file name
+filename = 'filteredCountry.csv'
+
+#Open the file
+infile = open(filename, 'r') 
+
+#Print the first two lines of the file
+print(infile.readline())
+print(infile.readline())
+
+#call infile.read()
+print(infile.read())
+
+#close the file
+infile.close()
+
+
+
+
+
+#Create a variable for the file name
+filename = "filteredCountry.csv"
+
+#Open the file
+infile = open(filename, 'r') 
+
+lines = infile.readlines() 
+
+for line in lines: #lines is a list with each item representing a line of the file
+	if 'control' in line:
+		print(line) #print lines for control condition
+
+infile.close() #close the file when you're done!
+
+
+
+
+
+
+#Create a variable for the file name  
+filename = "filteredCountry.csv"
+
+#Open the file
+infile = open(filename, 'r') 
+
+lines = infile.readlines() 
+
+for line in lines:
+	sline = line.split(',')  # separates line into a list of items.  ',' tells it to split the lines at the commas
+	print(sline) #each line is now a list
+
+infile.close()  #Always close the file!
+
+
+
+
+filename = "output.txt"
+
+#w tells python we are opening the file to write into it
+outfile = open(filename, 'w')
+
+outfile.write("This is the first line of the file")
+outfile.write("This is the second line of the file")
+
+outfile.close() #Close the file when we’re done!
+
+
+
+
+filename = 'output_newlines.txt'
+
+#w tells python we are opening the file to write into it
+outfile = open(filename, 'w')
+ 
+outfile.write("This is the first line of the file\n")
+outfile.write("This is the second line of the file\n")
+
+outfile.close() #Close the file when we’re done!
+
+
+
+
+
+
+#Create a variable for the file name
+filename = 'filteredCountry.csv'
+
+##Open the file
+infile = open(filename, 'r') 
+
+lines = infile.readlines() 
+
+for line in lines[1:]: #skip the first line, which is the header
+    sline = line.strip() #get rid of trailing newline characters at the end of the line
+    sline = sline.split(',')  # separates line into a list of items.  ',' tells it to split the lines at the commas
+    
+    colonyCount = int(sline[4]) #store the colony count for the line as an integer
+    
+    if colonyCount > 30:
+        print(sline)
+  	
+#close the file
+infile.close()
+
+
+
+
+numbers = range(0, 10)
+
+filename = "output_numbers.txt"
+
+#w tells python we are opening the file to write into it
+outfile = open(filename, 'w')
+
+for number in numbers:
+	outfile.write(str(number))
+
+outfile.close() #Close the file when we’re done!
